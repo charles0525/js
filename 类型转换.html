@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var num=20.127;
+//			console.log(num.toFixed(2));//把数字转为字符串，指定小数，四舍五入
+//			console.log(num.toPrecision("21"))//把数字转为指定长度字符串，四舍五入
+			
+//			var time=new Date();
+//			console.log(time.getDate());//返回月中的某天
+//			console.log(time.getDay())//返回周中的某一天  (0 ~ 6)
+//			console.log(time.getTime());//返回1970/01/01至今毫秒数
+			
+			var nu='20.77';
+			console.log(parseFloat(nu));
+			console.log(parseInt(nu));
+			nu='20.A77';
+			console.log(parseFloat(nu));
+			console.log(parseInt(nu));
+			nu='A20.77';
+			console.log(parseFloat(nu));
+			console.log(parseInt(nu));
+			
+			//将布尔值转换为数字
+			console.log(Number(true));
+			console.log(Number(false));
+		</script>
+	</body>
+</html>

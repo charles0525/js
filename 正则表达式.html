@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//正则说明：i忽略大小写，g执行全局匹配(而非找到第一个停止匹配)，m执行多行匹配
+			//search()方法用于检索字符串中指定子字符串，或检索与正则表达式相匹配的子字符串，
+			var str='char122les';
+			console.log(str.search(/\d+/i));
+			console.log(str.search('12'));
+			//replace()方法使用正则表达式
+			console.log(str.replace(/\d+/i,'sea'));
+			
+			//使用RegExp对象
+			var exp=/\d{5,}/;
+			console.log(exp.test('char322323233les'));//true 或false
+			
+			//使用exec(),用于检索字符串中的正则表达式的匹配，其返回一个数组，没有匹配返回null
+			console.log(exp.exec('char322323233les')[0]);
+			
+			var patt=new RegExp('\\d+','i');//使用构造函数创建正则对象，需要常规的字符串转义规则
+			console.log(patt.exec('charles2013s'));
+			
+		</script>
+	</body>
+</html>

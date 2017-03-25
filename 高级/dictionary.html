@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function dictionary(){
+				var _obj=new Object();
+				this.containsKey=function(k){
+					var isContained=false;
+					for(var i in _obj){
+						if(i==k){
+							isContained=true;
+							break;
+						}
+					}
+					return isContained;
+				}
+				
+				this.addElement=function(k,v){
+					if(!this.containsKey(k)){
+						_obj[k]=v;
+					}
+				}
+				this.removeElement=function(k){
+					if(this.containsKey(k)){
+						delete _obj[k];
+					}
+				}
+				this.printAllElements=function(){
+					var result=JSON.stringify(_obj);
+					console.log(result);
+				}
+			}
+			
+			var dic=new dictionary();
+			dic.addElement("001","charles");
+			dic.addElement("002","sea");
+			dic.printAllElements();
+			dic.removeElement("001");
+			dic.printAllElements();
+		</script>
+	</body>
+</html>

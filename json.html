@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var obj={name:"charles",age:30};
+			//两种取值方式
+			console.log(obj.name);
+			console.log(obj["name"]);
+			
+			mobile=1212;//没有声明变量，默认为全局变量
+			console.log(mobile);
+			
+			var strJson='{"name":"Charles","age":"30"}';
+			var dataJson=JSON.parse(strJson);//字符串转JSON
+			console.log(dataJson["name"]);
+			var strJson2=JSON.stringify(dataJson);//JSON转字符串
+			console.log(strJson2);
+			
+			//json遍历
+			var objJson={name:"charles",age:30};
+			for(var j in objJson){
+				console.log(j+":"+objJson[j]);
+			}
+		</script>
+	</body>
+</html>

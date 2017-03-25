@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var str="charles";
+//			console.log(str[1]);
+//			console.log(str.constructor);//返回创建字符串属性的函数
+//			console.log(str.concat(' and liu'));//连接两个或多个字符串
+//			console.log(str.charAt(3));//获取指定位置字符
+			
+			var pattern=/(\d+)/;
+			var str2='charles12345sea  ';
+			var result=str2.match(pattern);				
+			console.log(result[0]);
+			var result2=str2.replace(pattern,'sea');
+			console.log(result2);
+			console.log(str2.substr(0,3));//从指定位置，截取指定长度字符
+			console.log(str2.substring(0,3));//从指定位置，截取到指定位置
+			console.log(str2.toLowerCase());//转小写
+			console.log(str2.toUpperCase());//转大写
+			console.log(str2.trim());//去空格
+			var num=[12,33];
+			console.log(num.toString().valueOf());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//自我调用函数
+			//自调函数只调一次，且自调的时候不会执行renturn方法。
+			var add = (function() {
+				console.log('只调了一次？');
+				var count = 0;
+				return function() {
+					count += 1;
+					console.log(count);
+				}
+			})();
+//			add();
+//			add();
+//			add();
+		
+			var add2=(function(){
+				var count=0;
+				
+				return function(){
+					count+=1;
+					console.log(count);
+				};
+			})();
+			add2();
+			add2();
+		</script>
+	</body>
+
+</html>

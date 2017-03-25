@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" id="btnSubmit" value="提交" />
+		<input type="button" id="btnRemove" value="移除事件" />
+		<div style="width：200px;height:50px;background-color: red;" id="content"></div>
+		<script>
+			//addEventListener()用于向元素添加事件句柄，可以向元素添加多个事件句柄，
+			//也可以向同一个元素添加多个同类型事件句柄，如两个“click”
+			//添加的事件句柄不会覆盖原有事件句柄
+			//语法：element.addEventListener(event,function,useCapture)
+			//useCapture 布尔类型，描述事件是冒泡还是捕获，可选参数
+			document.getElementById("btnSubmit").addEventListener("click", function() {
+				document.getElementById("content").addEventListener("mousemove",changeContent);
+			});
+//			document.getElementsByTagName("input")[0].addEventListener("click", function() {
+//				console.log("charles");
+//			});
+
+			//removeEventListener()方法移除由addEventListener()添加的事件句柄
+			//注意：移除事件句柄回调函数一定要与添加事件句柄回调函数一致。
+			document.getElementById("btnRemove").addEventListener("click", function() {
+				console.log("执行移除...");
+				document.getElementById("content").removeEventListener("mousemove", changeContent);
+			});
+			function changeContent(){
+				document.getElementById("content").innerHTML=Math.random();
+			}
+			
+			
+			//注意，IE8及早起版本，Opera7.0及早起版本不支持addEventListener(),removeEventListener()
+			//可以使用attachEvent(event,function)添加事件，detachEvent(event,function)来移除事件句柄。
+			//跨浏览器解决方法
+			var x=document.getElementById("content");
+			//主流浏览器
+			if(x.addEventListener){
+				x.addEventListener("click",changeContent);
+			}else if(x.attachEvent){
+				x.attachEvent("onclick",changeContent);
+			}
+		</script>
+	</body>
+
+</html>

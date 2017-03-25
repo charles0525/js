@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//js对象扩展方法 
+			Array.prototype.toUpper = function() {
+				for(i = 0; i < this.length; i++) {
+					this[i] = this[i].toUpperCase();
+				}
+			}
+
+			function myFunction() {
+				var arr = ['he', 'charles', 'sea'];
+				arr.toUpper();
+				console.log(arr.toString());
+			}
+			myFunction();
+
+			//合并数组
+			var arr1 = ['a', 'b', 'c'],
+				arr2 = ['x', 'y'];
+			var arr3 = arr1.concat(arr2);
+			console.log(arr3.join("."));
+
+			//删除数组最后一个元素
+			arr3.pop();
+			console.log(arr3.join('|'));
+
+			//删除数组第一个元素
+			arr3.shift();
+			console.log(arr3.toString());
+
+			//在数组末尾添加元素
+			arr3.push(2);
+			console.log(arr3.join('|'));
+			
+			//unshift:在数组第一个位置添加新元素,IE8之前版本不支持。
+			arr3.unshift(1000);
+			console.log("unshift:"+arr3.toString());
+
+			//数组反转排序
+			var arr = ['1', '2', '3'];
+			arr.reverse();
+			console.log(arr.toString());
+
+			//slice:从一个数组中选择元素，参数1取第一个元素索引（包含，必须），
+			//参数2为结束索引（不包含,可选）
+			var arr = [1, 2, 3, 4, 5, 6, 7, 8];
+			var arr2 = arr.slice(2, 5);
+			console.log(arr2.toString());
+
+			//splice:从数组中添加/删除元素，返回新的数组
+			//arrayObject.splice(index,howmany,item1,.....,itemX)
+			//index:必须，整数，规定添加/删除元素的位置，负数则从结尾开始
+			//howmany:必需，要删除元素数量，为0则不删除
+			//item1...可选，向数组添加新的元素
+			var arr = ["Banana", "Orange", "Apple", "Mango"];
+			arr.splice(1,0,'Fruit');//在索引1位置插入'Fruit'
+			console.log('splice:'+arr.toString());
+			arr.splice(2,2,'西红柿','苹果','桃子');//从索引2开始 删除2个元素，并添加3个元素
+			console.log(arr.toString());
+
+			//数组排序
+			//升序，按照字母排序规则
+			var arr = ["Banana", "Orange", "Apple", "Mango"];
+			arr.sort();
+			console.log(arr.toString());
+			//升序，按照数字排序
+			var arr = [1, 33, 2, 3, 32, 92, 45, 62, 88];
+			arr.sort(function(a, b) { return a - b; });
+			console.log(arr.toString());
+			//降序，按照数字降序
+			arr.sort(function(a, b) { return b - a; });
+			console.log(arr.toString());
+		</script>
+	</body>
+
+</html>

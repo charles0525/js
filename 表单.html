@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function postData(){
+				try{
+					checkData();
+					console.log("提交成功！");
+				}catch(msg){
+					console.log(msg);
+					return false;
+				}
+			}
+			function checkData(){
+				var objName=document.getElementById("name").value;
+				var objMobile=document.getElementById("mobile").value;
+				if(!!objName==false){
+					throw "姓名不能为空";
+				}
+				else if(!!objMobile==false){
+					throw "手机不能为空";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form id="form1" action='' onsubmit="postData();">
+			<label>姓名：</label><input type="text" id="name"><br>
+			<label>手机：</label><input type="tel" id="mobile"><br />
+			<input type="submit" id="btnSubmit" value="提交" />
+		</form>
+	</body>
+</html>

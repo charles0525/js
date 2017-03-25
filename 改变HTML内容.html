@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function updateDiv1() {
+				var obj = document.getElementById("div1");
+				obj.innerHTML = "测试呢";
+			}
+
+			function updateImg1() {
+				var img = document.getElementById("img1");
+				if(img.src.indexOf("bg_flower_multi.gif") >= 0) {
+					img.src = "img/img0012.png";
+				} else {
+					img.src = "img/bg_flower_multi.gif";
+				}
+
+			}
+			
+			if(isNaN(-10)){
+				console.log("不是数字");
+			}
+			
+		</script>
+	</head>
+
+	<body>
+		<input type="button" onclick="updateDiv1();" value="测试" />
+		<div id="div1">今天一直在下雨</div>
+		<input type="button" onclick="updateImg1();" value="测试2" /><br>
+		<img id="img1" src="img/bg_flower_multi.gif" style="width:200px;height:50px;">
+	</body>
+
+</html>
+<script>
+	var div1=document.getElementById("div1");
+			div1.style.color="#ff0000";
+</script>

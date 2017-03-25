@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="content">
+			<p id="p1">(c) Copyright 2017 abc. All Rights Reserved. </p>
+		</div>
+		<script>
+			//添加元素
+			var p=document.createElement("p");
+			var textNode=document.createTextNode("测试的了啊");
+			p.appendChild(textNode);
+			var divContent=document.getElementById("content");
+			divContent.appendChild(p);
+			
+			//删除元素
+			//方法1
+			var parent=document.getElementById("content");
+			var child=document.getElementById('p1');
+			parent.removeChild(child);
+			//方法2
+			var child=document.getElementById('p1');
+			child.parentNode.removeChild(child);
+		</script>
+	</body>
+</html>

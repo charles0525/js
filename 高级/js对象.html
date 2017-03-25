@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//创建直接的实例
+			var person=new Object();
+			person.name="charles";
+			person.age=30;
+			person.mobile='15268596512';
+			console.log(person.name);
+			
+			//使用对象构造器
+			function Person(name,age,mobile){
+				this.name=name;
+				this.age=age;
+				this.mobile=mobile;
+			}
+			var person2=new Person("sea",18,'15268596512');
+			console.log(person2.name);
+			
+			//把方法添加到JS对象
+			function Person3(name,age,mobile){
+				this.name=name;
+				this.age=age;
+				this.mobile=mobile;
+				this.say=say;
+				function say(){
+					console.log("hello "+this.name);
+				}
+			}
+			var person3=new Person3('charles',20,'152');
+			person3.say();
+			
+			
+		</script>
+		
+	</body>
+</html>

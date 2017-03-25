@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function get(){
+				try{
+					debugger;
+					valid(3);
+					console.log("执行成功");
+				}catch(msg){
+					console.log("异常消息："+msg);
+				}
+			}
+			function valid(num){
+				if(num<10){
+					throw '数字小于10';
+				}else{
+					throw '数字大于等于10';
+				}
+			}
+			window.onload=get;
+		</script>
+	</body>
+</html>

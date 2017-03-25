@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script>
+			//自调函数
+			(function() { console.log("ok"); })();
+
+			//函数是对象
+			function get(x, y, z) {
+				//				debugger;
+				console.log(arguments.length); //avaScript 函数有个内置的对象 arguments 对象.argument 对象包含了函数调用的参数数组。
+			}
+			get(1, 2, 3);
+
+			//函数作为对象方法调用
+			var myMethod = {
+				name: "charles",
+				ask: function() { console.log("hello " + this.name + " ,i'm ok."); } //this指myMethod对象
+			};
+			myMethod.ask();
+			console.log(myMethod.name);
+			
+			//使用构造函数调用函数
+			//如果函数调用前使用了new关键字，则是调用了构造函数，会创建一个新对象。
+			function myFunction(x,y){
+				this.firstName=x,
+				this.lastNae=y
+			}
+			var myFunc=new myFunction('Charles','He');
+			console.log(myFunc.firstName);
+			
+			//做为函数方法调用函数
+			//在js中，函数是对象，有它的属性和方法
+			//call()和apply()是预定义的函数和方法，两个方法可用于调用函数，第一个参数必须是对象本身。
+			function testFunction(x,y){
+				console.log(x*y);
+			}
+			
+		</script>
+	</body>
+
+</html>

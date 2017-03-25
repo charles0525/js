@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			var exp=/\d+/gi;// g全局匹配,i忽略大小写
+			var name='charles123456987sea0515';
+			//match，字符串匹配指定字符或表达式，并返回匹配内容
+			console.log(name.match(exp));//match
+			//test(),搜索字符串指定值，并返回true或false
+			console.log(exp.test(name));
+			var exp2=new RegExp("\\d+","gi");//必须转义
+			console.log(exp2.test(name));
+			//exec(),检索字符串中指定的值，没有匹配则返回null
+			console.log(exp.exec(name));
+			console.log(exp2.exec(name));
+		</script>
+	</body>
+</html>
